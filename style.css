@@ -18,7 +18,7 @@ body {
 header {
     background: #0a192f;
     color: #64ffda;
-    padding: 4rem 0;
+    padding: 4rem 0 2rem;
     text-align: center;
     border-bottom: 1px solid #64ffda;
 }
@@ -67,6 +67,10 @@ section {
     border-bottom: 1px solid #1e3a5f;
 }
 
+#welcome {
+    padding-top: 2rem;
+}
+
 section h2 {
     text-align: center;
     margin-bottom: 2rem;
@@ -88,12 +92,10 @@ section h2 {
 
 .bubble-container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
     margin-top: 2rem;
-    align-items: flex-start;
 }
 
 .bubble {
@@ -118,27 +120,23 @@ section h2 {
     box-shadow: 0 0 15px #64ffda;
 }
 
-.tech-bubbles-container {
+.quote-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 2rem;
 }
 
-.tech-bubble {
-    cursor: default;
-}
-
-#ai-bubble {
-    background-image: linear-gradient(45deg, #64ffda, #112240);
-}
-
-#n8n-bubble {
-    background-image: linear-gradient(45deg, #ff6b6b, #112240);
-}
-
-#future-bubble {
-    background-image: linear-gradient(45deg, #4d96ff, #112240);
+.quote-label-bubble {
+    background: #112240;
+    color: #64ffda;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.8rem;
+    border: 1px solid #64ffda;
 }
 
 .contact-info {
@@ -229,4 +227,49 @@ footer {
     padding: 2rem 0;
     background: #0a192f;
     color: #8892b0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .bubble {
+        width: 100px;
+        height: 100px;
+        font-size: 0.8rem;
+    }
+
+    .bubble-container {
+        gap: 1rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .bubble {
+        width: 80px;
+        height: 80px;
+        font-size: 0.7rem;
+    }
+
+    .bubble-container {
+        gap: 0.75rem;
+    }
 }
