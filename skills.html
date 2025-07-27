@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Kennedy Maina</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .skill-card {
+            background: #112240;
+            border: 1px solid #64ffda;
+            border-radius: 10px;
+            width: 250px;
+            height: 200px; /* Increased height for scrollability */
+            perspective: 1000px;
+        }
+        .skill-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .skill-card:hover .skill-card-inner { /* Changed from class toggle to hover */
+            transform: rotateY(180deg);
+        }
+        .skill-card-front, .skill-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .skill-card-front {
+            background-color: #112240;
+            color: #64ffda;
+        }
+        .skill-card-back {
+            background-color: #0a192f;
+            color: #ccd6f6;
+            transform: rotateY(180deg);
+            overflow-y: auto; /* Added for scrollability */
+        }
+        .skill-card-back ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kennedy Maina</h1>
+            <p>Cybersecurity Analyst | OSINT Specialist | Ethical AI for Protection | Software & Automation Engineer</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Security Tools</h3></div>
+                        <div class="skill-card-back"><ul><li>Wireshark</li><li>Nmap</li><li>Nessus</li><li>Burp Suite</li><li>Metasploit</li><li>Kali Linux</li><li>ELK Stack</li></ul></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Operating Systems</h3></div>
+                        <div class="skill-card-back"><ul><li>Linux (Ubuntu, Kali)</li><li>Windows</li></ul></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Penetration Testing</h3></div>
+                        <div class="skill-card-back"><ul><li>Web Application Security</li><li>Network Penetration Testing</li><li>Exploit Development</li><li>Vulnerability Scanning</li></ul></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Languages</h3></div>
+                        <div class="skill-card-back"><ul><li>Python</li><li>Bash</li><li>SQL</li><li>HTML</li><li>KQL</li><li>CSS</li><li>JSON</li></ul></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Protocols</h3></div>
+                        <div class="skill-card-back"><ul><li>TCP/IP</li><li>HTTP/HTTPS</li><li>DNS</li><li>DHCP</li></ul></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Cloud Security</h3></div>
+                        <div class="skill-card-back"><ul><li>AWS</li><li>Azure</li><li>Elastic</li></ul></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Incident Response</h3></div>
+                        <div class="skill-card-back"><ul><li>SIEM Monitoring</li><li>Threat Intelligence</li><li>Log Analysis</li><li>Forensics</li></ul></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front"><h3>Other</h3></div>
+                        <div class="skill-card-back"><ul><li>OSINT</li><li>Threat Hunting</li><li>Risk Assessment</li><li>Network Security</li><li>Data Analysis</li></ul></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kennedy Maina</p>
+        </div>
+    </footer>
+    <script>
+        const canvas = document.createElement('canvas');
+        document.body.insertBefore(canvas, document.body.firstChild);
+        const ctx = canvas.getContext('2d');
+
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.zIndex = '-1';
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let columns = Math.floor(canvas.width / 20);
+        let drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        function draw() {
+            ctx.fillStyle = 'rgba(10, 25, 47, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#64ffda';
+            ctx.font = '15px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = Math.floor(canvas.width / 20);
+            drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+        });
+    </script>
+</body>
+</html>

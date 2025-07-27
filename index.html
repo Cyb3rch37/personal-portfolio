@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennedy Maina - Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kennedy Maina</h1>
+            <p>Cybersecurity Analyst | OSINT Specialist | Ethical AI for Protection | Software & Automation Engineer</p>
+            <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Tech Quote" style="margin-top: 2rem;" />
+            <div class="tech-bubbles-container">
+                <div class="bubble tech-bubble" id="ai-bubble">Wonder</div>
+                <div class="bubble tech-bubble" id="n8n-bubble">Wander</div>
+                <div class="bubble tech-bubble" id="future-bubble">Repeatw</div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="welcome">
+        <div class="container">
+            <h2>Hi, welcome to my portfolio...</h2>
+            <div class="bubble-container">
+                <a href="about.html" class="bubble">About Me</a>
+                <a href="skills.html" class="bubble">Skills</a>
+                <a href="education.html" class="bubble">Education</a>
+                <a href="interests.html" class="bubble">Interests</a>
+                <a href="projects.html" class="bubble">Projects</a>
+                <a href="contact.html" class="bubble">Contact</a>
+                
+            </div>
+            <div class="contact-info">
+                <a href="mailto:mainakennedy28@proton.me" class="contact-bubble">
+                    <span class="icon">📧</span> Email
+                </a>
+                <a href="tel:+254794473044" class="contact-bubble">
+                    <span class="icon">📞</span> Phone
+                </a>
+                <a href="https://linkedin.com/in/maina-kennedy-7aaa10376" target="_blank" class="contact-bubble">
+                    <span class="icon">💼</span> LinkedIn
+                </a>
+                <a href="https://github.com/Cyb3rch37" target="_blank" class="contact-bubble">
+                    <span class="icon">💻</span> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kennedy Maina</p>
+        </div>
+    </footer>
+    <script>
+        const canvas = document.createElement('canvas');
+        document.body.insertBefore(canvas, document.body.firstChild);
+        const ctx = canvas.getContext('2d');
+
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.zIndex = '-1';
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let columns = Math.floor(canvas.width / 20);
+        let drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        function draw() {
+            ctx.fillStyle = 'rgba(10, 25, 47, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#64ffda';
+            ctx.font = '15px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = Math.floor(canvas.width / 20);
+            drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+        });
+    </script>
+</body>
+</html>

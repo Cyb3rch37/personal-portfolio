@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests - Kennedy Maina</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .interests-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .interest {
+            background: #112240;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #64ffda;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .interest-icon {
+            font-size: 4rem;
+            color: #64ffda;
+        }
+        .interest-text h3 {
+            margin-top: 0;
+            color: #64ffda;
+        }
+        /* n8n Node Style */
+        .n8n-node::before {
+            content: '▶';
+            color: #64ffda;
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        /* AI Circuit Style */
+        .ai-circuit {
+            border-image: linear-gradient(to bottom, #64ffda, #112240) 1;
+            border-left-style: solid;
+            border-width: 4px;
+            padding-left: 1.5rem;
+        }
+        /* Blockchain Block Style */
+        .blockchain-block {
+            border: 2px dashed #64ffda;
+            position: relative;
+        }
+        .blockchain-block::after {
+            content: '🔗';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kennedy Maina</h1>
+            <p>Cybersecurity Analyst | OSINT Specialist | Ethical AI for Protection | Software & Automation Engineer</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="interests">
+        <div class="container">
+            <h2>Interests</h2>
+            <div class="interests-container">
+                <div class="interest n8n-node">
+                    <div class="interest-text">
+                        <h3>Automation & n8n</h3>
+                        <p>I am passionate about automation engineering and developing tools with n8n to streamline daily tasks and create efficient workflows.</p>
+                    </div>
+                </div>
+                <div class="interest ai-circuit">
+                    <div class="interest-text">
+                        <h3>Ethical AI</h3>
+                        <p>I am excited about the intersection of technology and security, particularly in the realm of ethical AI and its application in threat anticipation to build a safer digital world.</p>
+                    </div>
+                </div>
+                <div class="interest blockchain-block">
+                    <div class="interest-text">
+                        <h3>Blockchain Technology</h3>
+                        <p>My interests extend to blockchain technology, exploring its potential for enhancing security and creating decentralized systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kennedy Maina</p>
+        </div>
+    </footer>
+    <script>
+        const canvas = document.createElement('canvas');
+        document.body.insertBefore(canvas, document.body.firstChild);
+        const ctx = canvas.getContext('2d');
+
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.zIndex = '-1';
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let columns = Math.floor(canvas.width / 20);
+        let drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        function draw() {
+            ctx.fillStyle = 'rgba(10, 25, 47, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#64ffda';
+            ctx.font = '15px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = Math.floor(canvas.width / 20);
+            drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+        });
+    </script>
+</body>
+</html>

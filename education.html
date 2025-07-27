@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Kennedy Maina</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .education-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .education-card {
+            background: #112240;
+            border: 1px solid #64ffda;
+            border-radius: 10px;
+            width: 300px;
+            height: 220px;
+            perspective: 1000px;
+        }
+        .education-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .education-card:hover .education-card-inner {
+            transform: rotateY(180deg);
+        }
+        .education-card-front, .education-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .education-card-front {
+            background-color: #112240;
+            color: #64ffda;
+        }
+        .education-card-back {
+            background-color: #0a192f;
+            color: #ccd6f6;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kennedy Maina</h1>
+            <p>Cybersecurity Analyst | OSINT Specialist | Ethical AI for Protection | Software & Automation Engineer</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education & Training</h2>
+            <div class="education-container">
+                <div class="education-card">
+                    <div class="education-card-inner">
+                        <div class="education-card-front"><h3>TryHackMe</h3></div>
+                        <div class="education-card-back"><p>Completed multiple courses in Web Application Security, Penetration Testing, Networking, and Incident Response. Gained hands-on practice in exploiting and defending against real-world security threats.</p></div>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-card-inner">
+                        <div class="education-card-front"><h3>The Odin Project</h3></div>
+                        <div class="education-card-back"><p>Studied Full Stack Web Development & Cybersecurity Fundamentals. Gained proficiency in HTML, CSS, JavaScript, and SQL while learning security best practices.</p></div>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-card-inner">
+                        <div class="education-card-front"><h3>Power Learn Project Academy</h3></div>
+                        <div class="education-card-back"><p>Learned Software Engineering, Database Management, Web Development, Blockchain, Cryptography, and AI Prompt Engineering.</p></div>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-card-inner">
+                        <div class="education-card-front"><h3>HackerOne</h3></div>
+                        <div class="education-card-back"><p>Active in the Bug Bounty program, testing web applications for bugs and vulnerabilities and participating in hackathon events.</p></div>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-card-inner">
+                        <div class="education-card-front"><h3>HackTheBox & Cisco Network Academy</h3></div>
+                        <div class="education-card-back"><p>Gained proficiency in Capture The Flag (CTF) events and completed practical labs in ethical hacking, penetration testing, and threat intelligence.</p></div>
+                    </div>
+                </div>
+                 <div class="education-card">
+                    <div class="education-card-inner">
+                        <div class="education-card-front"><h3>Wissafrica.org</h3></div>
+                        <div class="education-card-back"><p>Served as a SOC Intern Analyst from January 2023 to December 2024, gaining practical experience in security operations.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kennedy Maina</p>
+        </div>
+    </footer>
+    <script>
+        const canvas = document.createElement('canvas');
+        document.body.insertBefore(canvas, document.body.firstChild);
+        const ctx = canvas.getContext('2d');
+
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.zIndex = '-1';
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let columns = Math.floor(canvas.width / 20);
+        let drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        function draw() {
+            ctx.fillStyle = 'rgba(10, 25, 47, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#64ffda';
+            ctx.font = '15px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = Math.floor(canvas.width / 20);
+            drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+        });
+    </script>
+</body>
+</html>
