@@ -21,4 +21,5 @@ I have a deep understanding of multiple programming paradigms, from the object-o
 
 The projects contained within this portfolio are more than just lines of code; they are a testament to my vision for the future of technology. I invite you to explore my work and see for yourself how I am turning visionary ideas into tangible results.
 
-Thank you for visiting.
+Thank you for visiting. I look forward to connecting with like-minded individuals who share a passion for innovation and the transformative power of technology.
+Here is a link to my [Portfolio] (https://cyb3rch37.github.io/personal-portfolio) where you can find more about my work and projects.
