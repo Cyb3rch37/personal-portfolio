@@ -1,8 +1,8 @@
-# Personal Portfolio: A Visionary Technologist
+# Personal Portfolio: The Cyber Chef
 
 Welcome to my personal portfolio. This repository showcases a collection of projects and experiments that embody my passion for pushing the boundaries of technology. I am a forward-thinking developer with a strong focus on creating innovative solutions that not only solve complex problems but also inspire the next wave of technological advancements.
 
-My work is driven by a relentless curiosity and a desire to explore the untapped potential of emerging technologies. I believe in the power of code to transform ideas into reality, and I am constantly seeking new challenges that allow me to grow and learn.
+My work is driven by a relentless curiosity <just like a chef👨‍🍳> and a desire to explore the untapped potential of emerging technologies. I believe in the power of code to transform ideas into reality, and I am constantly seeking new challenges that allow me to grow and learn.
 
 ## Core Competencies & Interests
 
