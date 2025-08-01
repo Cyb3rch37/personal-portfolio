@@ -7,49 +7,16 @@ body {
     padding: 0;
     background: #0a192f;
     color: #ccd6f6;
-    overflow: hidden;
 }
 
-.matrix-container {
+.background-animation {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
     z-index: -1;
-    overflow: hidden;
-}
-
-.matrix-column {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 20px;
-    animation: matrix-fall linear infinite;
-}
-
-@keyframes matrix-fall {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-
-.matrix-char {
-    display: block;
-    color: #64ffda;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 15px;
-    opacity: 0;
-    animation: matrix-fade-in 0.5s forwards;
-}
-
-@keyframes matrix-fade-in {
-    to {
-        opacity: 1;
-    }
 }
 
 .container {
@@ -76,15 +43,14 @@ header p {
     color: #8892b0;
     font-size: 1.2rem;
 }
- to
 .profile-picture {
     width: 150px;
     height: 150px;
-    border-radius: 55%;
+    border-radius: 50%;
     border: 3px solid #64ffda;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
 }
 
 nav {
