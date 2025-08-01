@@ -55,9 +55,25 @@
             transform: translateY(-50%);
             font-size: 2rem;
         }
+
+        /* Sketchup Block Style */
+        .sketchup-block {
+            border: 2px dashed #64ffda;
+            position: relative;
+        }
+
+        .sketchup-block::after {
+            content: '✏️';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+        }
     </style>
 </head>
 <body>
+    <div class="matrix-container"></div>
     <nav>
         <div class="container">
             <ul>
@@ -94,6 +110,12 @@
                         <p>My interests extend to blockchain technology, exploring its potential for enhancing security and creating decentralized systems.</p>
                     </div>
                 </div>
+                <div class="interest sketchup-block">
+                    <div class="interest-text">
+                        <h3>Sketchup</h3>
+                        <p>I enjoy using Sketchup for 3D modeling, particularly for architectural designs. It's a versatile tool for creating detailed models and visualizations.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -103,58 +125,5 @@
             <p>&copy; 2025 Kennedy Maina</p>
         </div>
     </footer>
-    <script>
-        const canvas = document.createElement('canvas');
-        document.body.insertBefore(canvas, document.body.firstChild);
-        const ctx = canvas.getContext('2d');
-
-        canvas.style.position = 'fixed';
-        canvas.style.top = '0';
-        canvas.style.left = '0';
-        canvas.style.zIndex = '-1';
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let columns = Math.floor(canvas.width / 20);
-        let drops = [];
-
-        for (let i = 0; i < columns; i++) {
-            drops[i] = 1;
-        }
-
-        const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-        function draw() {
-            ctx.fillStyle = 'rgba(10, 25, 47, 0.1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#64ffda';
-            ctx.font = '15px monospace';
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                ctx.fillText(text, i * 20, drops[i] * 20);
-
-                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-
-                drops[i]++;
-            }
-        }
-
-        setInterval(draw, 33);
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            columns = Math.floor(canvas.width / 20);
-            drops = [];
-            for (let i = 0; i < columns; i++) {
-                drops[i] = 1;
-            }
-        });
-    </script>
 </body>
 </html>
